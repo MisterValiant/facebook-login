@@ -4,6 +4,11 @@
 <head>
   <title>Facebook Login JavaScript Example</title>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Connect with us on facebook and share aliens vs ghosts with your friends. Have fun in this physics game.">
+  <meta name="keywords" content="angry bird, physics game, construct3, facebook oauth">
+
 </head>
 
 <body>
@@ -77,14 +82,128 @@
     }
   </script>
 
+  <style>
+    html {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: black;
+    }
+
+    .main-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .fb-container {
+      margin-top: 30px;
+      height: 100%;
+      width: 75%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: 30px;
+      background-color: rgb(246, 224, 193);
+      border: 1px solid rgba(0, 0, 0, 0.6);
+      border-bottom: 4px solid rgba(0, 0, 0, 0.6);
+      background-image: url("colored_desert.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .fb-container img {
+      margin-top: 30px;
+      background-color: blueviolet;
+      height: auto;
+      width: 200px;
+      border-radius: 20px;
+      border: 2px solid grey;
+    }
+
+    .fb-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .short-hr {
+      background-color: black;
+      height: 1px;
+      width: 200px;
+    }
+
+    .long-hr {
+      background-color: black;
+      height: 1px;
+      width: 300px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-weight: bold;
+    }
+
+    .support {
+      background-color: lightskyblue;
+      border-radius: 30px;
+      padding: 2px;
+      text-decoration: none;
+
+    }
+  </style>
 
   <!-- The JS SDK Login Button -->
+  <div class="main-container">
+    <div class="fb-container">
 
-  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-  </fb:login-button>
+      <div class="fb-image">
+        <img src="icon-114.png" />
 
-  <div id="status">
+        <br />
+        <hr class="short-hr" />
+
+        <h1>Aliens v/s Ghosts</h1>
+
+        <p>Thank you for playing Aliens vs Ghosts and connecting on Facebook.
+        </p>
+
+        <h4>LOG INTO FACEBOOK:</h4>
+
+        <fb:login-button style="padding-left:200px" scope="public_profile,email" onlogin="checkLoginState();"
+          class="fb-button">
+        </fb:login-button>
+
+
+      </div>
+
+      <br />
+
+      <hr class="long-hr" />
+      <p>
+        🎮 A game by Venilen and co. Group
+      </p>
+
+      <p>
+        🎧 For support contact: <a class="support" target="_blank" href="https://github.com/Venilen"> &nbsp; Venilen
+          &nbsp; </a>
+      </p>
+
+    </div>
   </div>
+  <!-- <div id="status">
+  </div> -->
 
   <!-- Load the JS SDK asynchronously -->
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
